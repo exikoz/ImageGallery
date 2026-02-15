@@ -27,4 +27,4 @@ node setup-assets.js
 ```
   
 
-This will download 40 images, optimize them to WebP, create thumbnails, and generate data/images.json.
+This will download 40 images, optimize them to WebP, create thumbnails, tags, and generate data/images.json.
