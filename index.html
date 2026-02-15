@@ -1,21 +1,160 @@
-<header>
-    <h1>Mitt Bildgalleri</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-    <section class="search-container">
-        <label for="image-search">Sök efter bilder:</label>
-        <input type="search" id="image-search" placeholder="T.ex. 'water'...">
-    </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium image gallery showcasing beautiful photography.">
+    <title>K3U1 | Image Gallery</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 
-    <nav aria-label="Kategorifiltrering">
-        <ul role="tablist">
-            <li><button role="tab" aria-selected="true" data-category="All">Alla</button></li>
-            <li><button role="tab" aria-selected="false" data-category="Water">Vatten</button></li>
-            <li><button role="tab" aria-selected="false" data-category="Animals">Djur</button></li>
-        </ul>
-    </nav>
-</header>
+<body>
 
-<main>
-    <div id="gallery-grid" role="region" aria-live="polite" aria-label="Bildgalleri">
-    </div>
-</main>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="logo">K3U1 - Image Gallery</h1>
+
+            <div class="search-wrapper" role="search">
+                <label for="image-search" class="visually-hidden">Search images</label>
+                <input type="search" id="image-search" placeholder="Search for inspiration..." autocomplete="off">
+                <svg class="search-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+
+            <nav class="category-nav" aria-label="Category Navigation">
+                <ul role="tablist" class="nav-list">
+                    <li><button role="tab" aria-selected="true" aria-controls="gallery-grid" class="nav-btn active"
+                            data-category="all">All</button>
+                    </li>
+                    <li><button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
+                            data-category="nature">Nature</button>
+                    </li>
+                    <li><button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
+                            data-category="architecture">Architecture</button></li>
+                    <li><button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
+                            data-category="water">Water</button>
+                    </li>
+                    <li><button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
+                            data-category="animals">Animals</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tag-filter-container" aria-labelledby="filter-heading">
+            <span id="filter-heading" class="filter-label">Filter by tags:</span>
+            <div class="tag-list" role="group" aria-label="Available tags">
+                <button class="tag-chip active" aria-pressed="true">All</button>
+                <button class="tag-chip" aria-pressed="false">green</button>
+                <button class="tag-chip" aria-pressed="false">trees</button>
+                <button class="tag-chip" aria-pressed="false">water</button>
+                <button class="tag-chip" aria-pressed="false">dark</button>
+                <button class="tag-chip" aria-pressed="false">light</button>
+                <button class="tag-chip" aria-pressed="false">sky</button>
+                <button class="tag-chip" aria-pressed="false">forest</button>
+            </div>
+        </section>
+
+        <section id="gallery-grid" class="gallery-grid" aria-label="Image Gallery" role="region">
+
+            <article class="gallery-item" data-category="nature">
+                <button class="image-wrapper" aria-haspopup="dialog" aria-label="View Full Nature Wonder">
+                    <img src="images/thumbs/nature-1.webp"
+                        alt="A lush green forest with sunlight filtering through trees" loading="lazy">
+                    <div class="overlay" aria-hidden="true">
+                        <span class="view-text">View Full</span>
+                    </div>
+                </button>
+                <div class="image-info">
+                    <h3>Nature Wonder</h3>
+                    <p class="image-category">Nature</p>
+                    <div class="image-tags" aria-label="Tags">
+                        <span class="tag-badge">green</span>
+                        <span class="tag-badge">trees</span>
+                        <span class="tag-badge">forest</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="gallery-item" data-category="architecture">
+                <button class="image-wrapper" aria-haspopup="dialog" aria-label="View Full Modern Design">
+                    <img src="images/thumbs/architecture-1.webp"
+                        alt="Modern minimalist building with large glass windows" loading="lazy">
+                    <div class="overlay" aria-hidden="true">
+                        <span class="view-text">View Full</span>
+                    </div>
+                </button>
+                <div class="image-info">
+                    <h3>Modern Design</h3>
+                    <p>Architecture</p>
+                </div>
+            </article>
+
+            <article class="gallery-item" data-category="water">
+                <button class="image-wrapper" aria-haspopup="dialog" aria-label="View Full Calm Waters">
+                    <img src="images/thumbs/water-1.webp" alt="Serene blue lake reflecting a clear sky" loading="lazy">
+                    <div class="overlay" aria-hidden="true">
+                        <span class="view-text">View Full</span>
+                    </div>
+                </button>
+                <div class="image-info">
+                    <h3>Calm Waters</h3>
+                    <p>Water</p>
+                </div>
+            </article>
+
+            <article class="gallery-item" data-category="animals">
+                <button class="image-wrapper" aria-haspopup="dialog" aria-label="View Full Wild Life">
+                    <img src="images/thumbs/animals-1.webp" alt="A close up of a wild deer in the grass" loading="lazy">
+                    <div class="overlay" aria-hidden="true">
+                        <span class="view-text">View Full</span>
+                    </div>
+                </button>
+                <div class="image-info">
+                    <h3>Wild Life</h3>
+                    <p>Animals</p>
+                </div>
+            </article>
+
+        </section>
+
+        <div id="status-message" class="status-message hidden" aria-live="polite">
+            <p>No images found.</p>
+        </div>
+
+    </main>
+
+    <dialog id="lightbox" class="lightbox" aria-labelledby="lightbox-title" aria-modal="true">
+        <div class="lightbox-content">
+            <button id="lightbox-close" class="lightbox-close" aria-label="Close lightbox">&times;</button>
+
+            <div class="lightbox-image-container">
+                <button id="prev-btn" class="nav-arrow prev" aria-label="Previous image">&#10094;</button>
+                <img id="lightbox-img" src="" alt=""> <button id="next-btn" class="nav-arrow next"
+                    aria-label="Next image">&#10095;</button>
+            </div>
+
+            <div class="lightbox-details">
+                <h2 id="lightbox-title">Image Title</h2>
+                <p id="lightbox-category">Category</p>
+            </div>
+        </div>
+    </dialog>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 K3U1 Image Gallery. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="src/logic.js"></script>
+</body>
+
+</html>
