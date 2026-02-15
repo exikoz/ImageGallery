@@ -1,0 +1,21 @@
+<header>
+    <h1>Mitt Bildgalleri</h1>
+
+    <section class="search-container">
+        <label for="image-search">Sök efter bilder:</label>
+        <input type="search" id="image-search" placeholder="T.ex. 'water'...">
+    </section>
+
+    <nav aria-label="Kategorifiltrering">
+        <ul role="tablist">
+            <li><button role="tab" aria-selected="true" data-category="All">Alla</button></li>
+            <li><button role="tab" aria-selected="false" data-category="Water">Vatten</button></li>
+            <li><button role="tab" aria-selected="false" data-category="Animals">Djur</button></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div id="gallery-grid" role="region" aria-live="polite" aria-label="Bildgalleri">
+    </div>
+</main>
