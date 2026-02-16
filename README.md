@@ -43,11 +43,11 @@ Accessible image gallery application. Built with performance and user experience
 ## Architecture
 
 ### Technical Diagram
-![Technical Diagram](docs/technical-diagram.png)
+![Technical Diagram](docs/technical-diagram-v1.png)
 *Diagram illustrating the application's code structure and flow.*
 
 ### User Action Flow
-![User Action Flow](docs/user-action-diagram.png)
+![User Action Flow](docs/user-action-diagram-v1.png)
 *Diagram illustrating the user interaction flow.*
 
 ## Accessibility & SEO
