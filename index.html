@@ -30,28 +30,25 @@
             </div>
 
             <nav class="category-nav" aria-label="Category Navigation">
-                <ul role="tablist" class="nav-list">
-                    <li><button role="tab" aria-selected="true" aria-controls="gallery-grid" class="nav-btn active"
-                            data-category="all">All</button>
-                    </li>
-                    <li><button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
-                            data-category="nature">Nature</button>
-                    </li>
-                    <li><button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
-                            data-category="architecture">Architecture</button></li>
-                    <li><button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
-                            data-category="water">Water</button>
-                    </li>
-                    <li><button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
-                            data-category="animals">Animals</button></li>
-                </ul>
+                <div role="tablist" class="nav-list">
+                    <button role="tab" aria-selected="true" aria-controls="gallery-grid" class="nav-btn active"
+                        data-category="all" id="tab-all">All</button>
+                    <button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
+                        data-category="wallpapers" id="tab-wallpapers">Wallpapers</button>
+                    <button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
+                        data-category="nature" id="tab-nature">Nature</button>
+                    <button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
+                        data-category="animals" id="tab-animals">Animals</button>
+                    <button role="tab" aria-selected="false" aria-controls="gallery-grid" class="nav-btn"
+                        data-category="travel" id="tab-travel">Travel</button>
+                </div>
             </nav>
         </div>
     </header>
 
     <main>
         <section class="tag-filter-container" aria-labelledby="filter-heading">
-            <span id="filter-heading" class="filter-label">Filter by tags:</span>
+            <h2 id="filter-heading" class="filter-label">Filter by tags:</h2>
             <div class="tag-list" role="group" aria-label="Available tags">
                 <button class="tag-chip active" aria-pressed="true">All</button>
                 <button class="tag-chip" aria-pressed="false">green</button>
@@ -62,9 +59,11 @@
                 <button class="tag-chip" aria-pressed="false">sky</button>
                 <button class="tag-chip" aria-pressed="false">forest</button>
             </div>
+            <button id="tag-toggle-btn" class="tag-toggle-btn hidden">Show more (+)</button>
         </section>
 
-        <section id="gallery-grid" class="gallery-grid" aria-label="Image Gallery" role="region">
+        <section id="gallery-grid" class="gallery-grid" aria-label="Image Gallery" role="tabpanel">
+            <h2 class="visually-hidden">Image Gallery</h2>
 
             <article class="gallery-item" data-category="nature">
                 <button class="image-wrapper" aria-haspopup="dialog" aria-label="View Full Nature Wonder">
@@ -154,7 +153,7 @@
         <p>&copy; 2026 K3U1 Image Gallery. All rights reserved.</p>
     </footer>
 
-    <script type="module" src="src/logic.js"></script>
+    <script type="module" src="src/index.js"></script>
 </body>
 
 </html>
